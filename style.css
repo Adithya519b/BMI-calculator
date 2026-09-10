@@ -1,74 +1,687 @@
-*{
-    margin: 0px;
-    padding:0px;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
- img{
-    width: 600px;
-    margin: auto;
-    margin-left: 20%;
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3a0ca3,
+            #4361ee,
+            #00b4d8
+        );
+
+    padding: 30px 20px;
+
+    color: #0a2540;
 }
-.intro{
-    padding: 2%;
-}
-.container{
-    margin: 2%;
-    border:2px solid black;
-    padding: 2%;
+
+.intro {
+
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 22px;
+
+    padding: 20px;
+
     display: flex;
-    background-color: rgba(226, 19, 233, 0.445);
-}
-.show{
-    display: inline;
+
+    align-items: center;
+
+    gap: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
 
 }
-.input{
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+
+
+.intro-image {
+
+    flex: 0 0 220px;
+
+}
+
+
+.intro-image img {
+
+    width: 100%;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+}
+
+
+.intro-content h2 {
+
+    margin-bottom: 10px;
+
+    font-size: 25px;
+
+}
+
+
+.intro-content p {
+
+    color: #64748b;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+}
+
+.main-title {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 38px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.container {
+
+    max-width: 900px;
+
     margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+
 }
-.result{
-        margin: auto;
-        height: 100px;
+
+.calculator,
+.result {
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+}
+
+
+.calculator h2 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    font-size: 24px;
+
+}
+
+.field {
+
+    margin-bottom: 18px;
+
+}
+
+
+.field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #475569;
+
+}
+
+.input-group {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+input,
+select {
+
+    border: 2px solid #e2e8f0;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    font-size: 16px;
+
+    padding: 13px;
+
+    transition: 0.3s;
+
+}
+
+
+input {
+
+    width: 100%;
+
+}
+
+
+select {
+
+    width: 145px;
+
+    cursor: pointer;
+
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: #4361ee;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(67, 97, 238, 0.12);
+
+}
+
+
+input::placeholder {
+
+    color: #94a3b8;
+
+}
+
+#inchField {
+
+    display: none;
+
+}
+#find {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin-top: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3a0ca3,
+            #4361ee
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(67, 97, 238, 0.3);
+
+}
+
+
+#find:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(67, 97, 238, 0.4);
+
+}
+
+
+#find:active {
+
+    transform: scale(0.98);
+
+}
+#error {
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    min-height: 18px;
+
+}
+
+.result {
+
+    text-align: center;
+
+}
+
+
+.result h3 {
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+
+}
+
+.bmi-value {
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: #3a0ca3;
+
+    margin: 10px 0;
+
+}
+
+.category {
+
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Category backgrounds */
+
+.underweight-bg {
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+}
+
+
+.normal-bg {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+}
+
+
+.overweight-bg {
+
+    background: #ffedd5;
+
+    color: #ea580c;
+
+}
+
+
+.obese-bg {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+}
+
+.range-container {
+
+    margin-top: 10px;
+
+}
+
+
+#range {
+
+    width: 100%;
+
+    accent-color: #4361ee;
+
+    cursor: default;
+
+}
+
+
+.range-labels {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+.bmi-info {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+}
+
+
+.info-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-align: left;
+
+}
+
+
+.info-item span {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+}
+
+
+.info-item p {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #475569;
+
+}
+
+
+.info-item small {
+
+    font-weight: normal;
+
+}
+
+
+.underweight span {
+
+    background: #60a5fa;
+
+}
+
+
+.normal span {
+
+    background: #4ade80;
+
+}
+
+
+.overweight span {
+
+    background: #fb923c;
+
+}
+
+
+.obese span {
+
+    background: #ef4444;
+
+}
+
+
+.chart {
+
+    max-width: 900px;
+
+    margin: 30px auto 0;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+}
+
+
+.chart img {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: 12px;
+
+}
+
+footer {
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 13px;
+
+    margin-top: 25px;
+
+}
+
+@media (max-width: 750px) {
+
+    .container {
+
+        grid-template-columns: 1fr;
+
+        max-width: 550px;
+
     }
 
-#find{
-    background-color: rgb(248, 244, 6);
-    border-radius:10px ;
-}
-#find:active{
-    transform: scale(0.9);
-    transition: 1s;
-}
-@media screen and (max-width:500px){
-    .input .result{
-        display: flex;
-        width: 30%;
-        margin: auto;
-       
+    .intro {
+
+        max-width: 550px;
+
     }
-    input{
-        width: 90%;
-        margin: 5px;
+
+}
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 18px 12px;
+
     }
-    #range #show{
+
+
+    .intro {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 18px;
+
+        gap: 15px;
+
+    }
+
+
+    .intro-image {
+
         width: 100%;
-        justify-content: end;
-        font-size: 5px;
+
     }
-    #show{
+
+
+    .intro-image img {
+
+        height: 170px;
+
+    }
+
+
+    .intro-content h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .intro-content p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .main-title {
+
+        font-size: 30px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .calculator,
+    .result {
+
+        padding: 22px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .input-group {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    select {
+
         width: 100%;
-        justify-content: end;
-        font-size: 15px;
+
     }
-    
-    .container{
-        height: 30vh;
+
+
+    .bmi-value {
+
+        font-size: 48px;
+
     }
-    img{
-    width: 90%;
-    margin: 2%;
+
+
+    .bmi-info {
+
+        grid-template-columns: 1fr;
+
     }
+
 }
+
+
+@media (max-width: 320px) {
+
+    .main-title {
+
+        font-size: 26px;
+
+    }
+
+
+    .calculator,
+    .result {
+
+        padding: 18px 14px;
+
+    }
+
+
+    .bmi-value {
+
+        font-size: 42px;
+
+    }
+
+}
+
